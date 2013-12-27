@@ -1,0 +1,17 @@
+<!-- insert_bottom 'div#tabcontent' -->
+<div id="flight" class="tab-pane fade active in">
+              <ul class="filtros_inline">
+              <li>
+                <label id="entradas"><%= t('check_in')%> <br>
+                  <input id="entrada" type="text" name="check_in_accommodation" value="<%#= check_in_accommodation %>" onchange="CompareDates('entrada', 'salida', 1, true)" class="datepicker">
+                </label>
+              </li>
+              <li>
+                <label id="salidas"><%= t('check_out')%> <br>
+                  <input id="salida" type="text" name="check_out_accommodation" value="<%#= check_out_accommodation %>" onchange="CompareDates('entrada', 'salida', 1, false)" class="datepicker">
+                </label>
+              </li>
+            </ul>
+                          
+</div>
+

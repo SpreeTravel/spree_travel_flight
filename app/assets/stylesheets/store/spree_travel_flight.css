@@ -1,3 +1,7 @@
 /*
  *= require store/spree_frontend
 */
+
+#flight{
+    float: left;
+}

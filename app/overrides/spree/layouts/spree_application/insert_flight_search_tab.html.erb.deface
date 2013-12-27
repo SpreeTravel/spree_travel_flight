@@ -1,0 +1,2 @@
+<!-- insert_bottom 'ul#search_box' -->
+<li class=""><a data-toggle="tab" href="#flight"><%= Spree.t(:flight) %></a></li>
