@@ -2,21 +2,21 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_travel_flight'
-  s.version     = '2.0.3'
+  s.version     = '2.3.3'
   s.summary     = 'Flights into Spree'
   s.description = 'Adds Flights to spree'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'OpenJAF'
   s.email     = 'pqr@openjaf.com'
-  s.homepage  = 'http://github.com/openjaf/spree_travel_flights'
+  s.homepage  = 'http://github.com/openjaf/spree_travel_flight'
 
   #s.files       = `git ls-files`.split("\n")
   #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.1.1'
+  s.add_dependency 'spree_core', '~> 2.3.3'
 
   s.add_development_dependency 'capybara', '~> 2.0'
   s.add_development_dependency 'coffee-rails'
