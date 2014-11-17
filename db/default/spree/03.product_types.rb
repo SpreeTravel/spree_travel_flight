@@ -1,6 +1,7 @@
 ### This is the data
-rates = ['departure_date', 'arrival_date', 'travel_class']
-contexts = ['departure_date', 'arrival_date', 'travel_class']
+# INvestigar como estan los precios de las aerolineas
+rates = ['start_date', 'end_date', 'one_child', 'one_adult', 'travel_module']#destinations missing
+contexts = ['departure_date', 'arrival_date', 'travel_class', 'adult', 'child', 'travel_module']
 variants = ['travel_class']
 
 rate_option_types = rates.each.map {|r| Spree::OptionType.find_by_name(r)}
