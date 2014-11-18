@@ -30,6 +30,7 @@ require 'spree/testing_support/url_helpers'
 
 # Requires factories defined in lib/spree_travel_flight/factories.rb
 require 'spree_travel_flight/factories'
+require 'spree_travel_core/factories'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -76,6 +77,18 @@ RSpec.configure do |config|
   config.after :each do
     DatabaseCleaner.clean
   end
+  original_stderr = $stderr
+  original_stdout = $stdout
+  config.before(:all) do
+    # Redirect stderr and stdout
+    $stderr = File.new(File.join(File.dirname(__FILE__), 'dev', 'null.txt'), 'w')
+    $stdout = File.new(File.join(File.dirname(__FILE__), 'dev', 'null.txt'), 'w')
+  end
+  config.after(:all) do
+    $stderr = original_stderr
+    $stdout = original_stdout
+  end
+
 
   config.fail_fast = ENV['FAIL_FAST'] || false
 end
