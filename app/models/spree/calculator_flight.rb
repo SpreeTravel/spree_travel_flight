@@ -10,7 +10,7 @@ module Spree
       if pt_adults.present?
         [pt_adults]
       else
-        [1, 2, 3]
+        [1]
       end
     end
 
@@ -19,7 +19,7 @@ module Spree
       if pt_child.present?
         [pt_child]
       else
-        [1, 2]
+        [0]
       end
     end
 
@@ -49,7 +49,7 @@ module Spree
         children_array = self.get_child_list(r, context.child)
         combinations = adults_array.product(children_array)
         combinations.each do |ad, ch|
-          prices << self.get_rate_price(r, ad, ch) * days
+          prices << self.get_rate_price(r, ad, ch)
         end
       end
       prices
