@@ -11,8 +11,7 @@ describe 'Rake task spree_travel_flight:load' do
   context 'inserts correctly' do
     before { Dummy::Application.load_tasks }
     it 'associates correctly to product_type spree_travel_flight' do
-      print Spree::TravelCalculator.where(:name => 'Spree::CalculatorFlight').first.product_type.name
-      expect(Spree::TravelCalculator.where(:name => 'Spree::CalculatorFlight').first.product_type.name).to be_equal('flight')
+      expect(Spree::TravelCalculator.where(:name => 'Spree::CalculatorFlight').first.product_type.name).to eq('flight')
     end
 
     it 'the option types' do
