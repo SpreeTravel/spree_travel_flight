@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Spree::CalculatorFlight do
+
+  before :each do
+    DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
+    DatabaseCleaner.start
+  end
+
   it 'displays the right price' do
     prod = create(:travel_product, product_type: Spree::ProductType.first)
     expect(prod.product_type.name).to eq('flight')
