@@ -7,13 +7,14 @@
 option_types = [
   {:name => "start_date", :presentation => "Start Date", :attr_type => 'date'},
   {:name => "end_date", :presentation => "End Date", :attr_type => 'date'},
-  {:name => "departure_date", :presentation => "Departure Date", :attr_type => 'date'},
-  {:name => "travel_class", :presentation => "Class", :attr_type => 'selection'},
   {:name => "adult", :presentation => "Adult", :attr_type => 'integer'},
   {:name => "child", :presentation => "Child", :attr_type => 'integer'},
-  {:name => "one_adult", :presentation => "one_adult", :attr_type => 'float'},
-  {:name => "one_child", :presentation => "one_child", :attr_type => 'float'},
-  # {:name => "travel_module", :presentation => "Travel Module", :attr_type => 'selection'},
+  {:name => "one_child", :presentation => "One Child", :attr_type => 'float'},
+  {:name => "one_adult", :presentation => "One Adult", :attr_type => 'float'},
+  {:name => "departure_date", :presentation => "Departure Date", :attr_type => 'date'},
+  {:name => "return_date", :presentation => "Departure Date", :attr_type => 'date'},
+  {:name => "travel_class", :presentation => "Class", :attr_type => 'selection'},
+  {:name => "travel_module", :presentation => "Travel Module", :attr_type => 'selection'},
   {:name => "origin", :presentation => "Origin", :attr_type => 'destination'},
   {:name => "destination", :presentation => "Destination", :attr_type => 'destination'}
 ]

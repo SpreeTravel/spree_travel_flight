@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree', '~> ' + versions['spree']
-  s.add_dependency 'spree_travel_core', + versions['spree_travel']
+  s.add_dependency 'spree_travel_core', '~> '+ versions['spree_travel']
   s.add_dependency 'spree_auth_devise', '~> 2.2.0'
 
   s.add_development_dependency 'capybara', '~> 2.0'
