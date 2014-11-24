@@ -1,3 +1,5 @@
 FactoryGirl.define do
-  require 'spree_travel_flight/factories'
+  Dir["#{File.dirname(__FILE__)}/factories/**"].each do |f|
+    require File.expand_path(f)
+  end
 end
