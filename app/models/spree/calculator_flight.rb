@@ -33,10 +33,10 @@ module Spree
     # TODO: Retornar la variante adem'as del precio
     # TODO: valorar si 'variant' se puede poner como attr opcional para que se calcule dentro
     def self.calculate_price(context, variant)
-      puts "1"
+
       product = variant.product
       return [product.price.to_f] if product.rates.empty?
-      puts "2"
+
       prices = []
       days = context.end_date.to_date - context.start_date.to_date rescue 1
 
