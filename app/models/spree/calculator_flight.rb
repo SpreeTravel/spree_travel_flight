@@ -26,7 +26,7 @@ module Spree
     def self.get_rate_price(rate, adults, children)
       adults = adults.to_i
       children = children.to_i
-      price = adults * rate.one_adult + children * rate.one_child
+      price = adults * rate.get_option_value(:one_adult).to_i + children * rate.get_option_value(:one_child).to_i
       price
     end
 
