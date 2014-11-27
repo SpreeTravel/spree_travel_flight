@@ -16,7 +16,7 @@ option_types = [
   {:name => "travel_class", :presentation => "Class", :attr_type => 'selection'},
   {:name => "travel_module", :presentation => "Travel Module", :attr_type => 'selection'},
   {:name => "origin", :presentation => "Origin", :attr_type => 'destination'},
-  {:name => "destination", :presentation => "Destination", :attr_type => 'destination'}
+  {:name => "destination", :presentation => "Destination", :attr_type => 'destination'},
 ]
 
 ### Creating Option Types
