@@ -26,7 +26,7 @@ module Spree
     def self.get_rate_price(rate, adults, children)
       adults = adults.to_i
       children = children.to_i
-      price = adults * rate.get_option_value(:one_adult).to_i + children * rate.get_option_value(:one_child).to_i
+      price = adults * rate.one_adult.to_i + children * rate.one_child.to_i
       price
     end
 
@@ -43,8 +43,13 @@ module Spree
       # TODO: hacer lo mismo que los adultos y ninos pa los demas campos
       product.rates.each do |r|
         next if variant && (variant.id != r.variant_id)
-        next if context.start_date && (context.start_date.to_date < r.departure_date.to_date rescue false)
-        next if context.end_date && (context.end_date.to_date > r.departure_date.to_date rescue false)
+        next if context.departure_date && (context.departure_date.to_date < r.start_date.to_date rescue false)
+
+        next if context.departure_date && (context.departure_date.to_date > r.end_date.to_date rescue false)
+
+        next if context.origin && (context.origin.presentation == r.origin.presentation rescue false)
+        next if context.destination && (context.destination.presentation == r.destination.presentation rescue false)
+
         adults_array = self.get_adult_list(r, context.adult)
         children_array = self.get_child_list(r, context.child)
         combinations = adults_array.product(children_array)

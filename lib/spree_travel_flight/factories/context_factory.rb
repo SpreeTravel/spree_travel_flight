@@ -5,16 +5,18 @@ FactoryGirl.define do
       origin ""
       destination ""
       variant ""
+      adults 1
+      childs 1
+      departure_date Date.today
     end
     line_item
     after(:create) { |context, evaluator|
       context_params = {}
       context_params['product_type'] = 'flight'
-      context_params['start_date'] = Date.today
-      context_params['end_date'] = Date.today
+      context_params['departure_date'] = evaluator.departure_date
       context_params['travel_class'] = evaluator.variant.option_values.first.presentation
-      context_params['adult'] = 1
-      context_params['child'] = 1
+      context_params['adult'] = evaluator.adults
+      context_params['child'] = evaluator.childs
       context_params['origin'] = evaluator.origin
       context_params['destination'] = evaluator.destination
       context.initialize_variables
