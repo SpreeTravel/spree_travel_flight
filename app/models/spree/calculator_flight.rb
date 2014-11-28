@@ -7,8 +7,10 @@ module Spree
       days = context.end_date.to_date - context.start_date.to_date rescue 1
 
       product.rates.each do |r|
-        next if context.start_date.present? && (context.start_date.to_date < r.departure_date.to_date rescue false)
-        next if context.end_date.present? && (context.end_date.to_date > r.departure_date.to_date rescue false)
+        next if context.departure_date.present? && (context.departure_date.to_date < r.start_date.to_date rescue false)
+        next if context.departure_date.present? && (context.departure_date.to_date > r.end_date.to_date rescue false)
+        next if context.origin.present? && (context.origin.presentation == r.origin.presentation rescue false)
+        next if context.destination.present? && (context.destination.presentation == r.destination.presentation rescue false)
         adults_array = self.get_adult_list(r, context.adult)
         children_array = self.get_child_list(r, context.child)
         combinations = adults_array.product(children_array)
@@ -40,7 +42,7 @@ module Spree
     def self.get_rate_price(rate, adults, children)
       adults = adults.to_i
       children = children.to_i
-      price = adults * rate.one_adult + children * rate.one_child
+      price = adults * rate.one_adult.to_i + children * rate.one_child.to_i
       price
     end
 
