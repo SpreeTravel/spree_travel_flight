@@ -1,8 +1,13 @@
 # encoding: UTF-8
+
+require 'yaml'
+yaml = YAML.load(File.read('SPREE_TRAVEL_VERSIONS'))
+versions = yaml['gems']
+
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_travel_flight'
-  s.version     = '2.3.3'
+  s.version     = versions['spree_travel']
   s.summary     = 'Flights into Spree'
   s.description = 'Adds Flights to spree'
   s.required_ruby_version = '>= 1.9.3'
@@ -25,8 +30,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'factory_girl', '~> 4.2'
   s.add_development_dependency 'ffaker'
-  s.add_development_dependency 'rspec-rails',  '~> 2.11'
-  s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'rspec-rails',  '~> 3.0'
+  s.add_development_dependency 'sass-rails', '~> 4.0.2'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'

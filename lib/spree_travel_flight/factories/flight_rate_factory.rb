@@ -10,12 +10,12 @@ FactoryGirl.define do
     end
     association :variant, factory: :variant_decorated
     after(:create) { |rate, evaluator|
-      rate.set_option_value(:start_date, evaluator.start_date)
-      rate.set_option_value(:end_date, evaluator.end_date)
-      rate.set_option_value(:one_child, evaluator.one_child)
-      rate.set_option_value(:one_adult, evaluator.one_adult)
-      rate.set_option_value(:origin, evaluator.origin)
-      rate.set_option_value(:destination, evaluator.destination)
+      rate.set_persisted_option_value(:start_date, evaluator.start_date)
+      rate.set_persisted_option_value(:end_date, evaluator.end_date)
+      rate.set_persisted_option_value(:one_child, evaluator.one_child)
+      rate.set_persisted_option_value(:one_adult, evaluator.one_adult)
+      rate.set_persisted_option_value(:origin, evaluator.origin)
+      rate.set_persisted_option_value(:destination, evaluator.destination)
       rate.save
     }
   end
