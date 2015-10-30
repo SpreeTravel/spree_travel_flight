@@ -1,12 +1,12 @@
 module Spree
   class CalculatorFlight
 
-    def self.calculate_price(context, product)
-      return [product.price.to_f] if product.rates.empty?
+    def self.calculate_price(context, variant, options)
+      return [] if variant.rates.empty?
       prices = []
-      days = context.end_date.to_date - context.start_date.to_date rescue 1
+      days = context.end_date(options).to_date - context.start_date(options).to_date rescue 1
 
-      product.rates.each do |r|
+      variants.rates.each do |r|
         next if context.departure_date.present? && (context.departure_date.to_date < r.start_date.to_date rescue false)
         next if context.departure_date.present? && (context.departure_date.to_date > r.end_date.to_date rescue false)
         next if context.origin.present? && (context.origin.presentation == r.origin.presentation rescue false)
