@@ -14,6 +14,8 @@ option_types = [
   {:name => "one_adult", :presentation => "One Adult", :attr_type => 'float', :short => 'Adult'},
   {:name => "one_infant", :presentation => "One Infant", :attr_type => 'float', :short => 'Infant'},
   {:name => "departure_date", :presentation => "Departure Date", :attr_type => 'date', :short => 'Depart'},
+  {:name => "take_off_time", :presentation => "Take Off Time", :attr_type => 'time', :short => 'Take Off'},
+  {:name => "landing_time", :presentation => "Landing Time", :attr_type => 'time', :short => 'Landing'},
   {:name => "return_date", :presentation => "Return Date", :attr_type => 'date', :short => 'Return'},
   {:name => "travel_class", :presentation => "Class", :attr_type => 'selection', :short => 'Class'},
   {:name => "travel_module", :presentation => "Travel Module", :attr_type => 'selection', :short => 'Mod'},

@@ -1,5 +1,5 @@
 ### This is the data
-rates = ['start_date', 'end_date', 'one_child', 'one_adult', 'one_infant', 'origin', 'destination']
+rates = ['start_date', 'end_date', 'take_off_time', 'landing_time', 'one_child', 'one_adult', 'one_infant', 'origin', 'destination']
 contexts = ['departure_date', 'return_date', 'travel_class', 'adult', 'child', 'infant', 'origin', 'destination', 'travel_module']
 variants = ['travel_class']
 
