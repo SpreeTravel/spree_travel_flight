@@ -6,7 +6,7 @@ module Spree
       prices = []
       #days = context.end_date(options).to_date - context.start_date(options).to_date rescue 1
 
-      variants.rates.each do |r|
+      variant.rates.each do |r|
         #next if context.departure_date.present? && (context.departure_date.to_date < r.start_date.to_date rescue false)
         #next if context.departure_date.present? && (context.departure_date.to_date > r.end_date.to_date rescue false)
         #next if context.origin.present? && (context.origin.presentation == r.origin.presentation rescue false)
